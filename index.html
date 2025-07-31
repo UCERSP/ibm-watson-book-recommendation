@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Recommendation Chatbot</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "f1490b63-31a7-4f89-a158-118434f2841d", // The ID of this integration.
+    region: "jp-tok", // The region your integration is hosted in.
+    serviceInstanceID: "e702d6d1-244b-4a0e-aa48-aacbed0e6323", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Optional: Style Watson widget button */
+    .watson-assistant-chat-launcher {
+      z-index: 9999 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>📚 Welcome to Your Book Companion</h1>
+    <p>Ask me for book recommendations based on your mood, favorite authors, or how much time you have. I'm ready to chat!</p>
+  </div>
+</body>
+</html>
